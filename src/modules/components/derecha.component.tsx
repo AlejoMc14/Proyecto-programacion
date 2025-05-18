@@ -4,27 +4,33 @@ import Image from 'next/image';
 import ProfileUser from '../profileUser/component/profileUser.component';
 export default function derechaComponent() {
   return (
-    <aside className="flex flex-col w-1/4 px-4 py-5 bg-neutral-900 my-20 rounded-lg">
-      <div className="flex flex-col gap-5 items-center h-1/2">
-        <div className="bg-neutral-700 p-3 rounded-md">
-       <img
-  src="https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/MESSI.jpg"
-  alt="logo"
-  width={150}
-  height={150}
-/>
+<div className="flex flex-row gap-6">
+  {/* Tarjeta del usuario */}
+  <div className="w-1/3">
+    {/* Aquí va tu componente de tarjeta de usuario */}
+    <div className="bg-gray-600 text-white p-4 rounded-lg text-center">
+      <img
+        src="https://fcb-abj-pre.s3.amazonaws.com/img/jugadors/MESSI.jpg"
+        alt="User Avatar"
+        className="mx-auto rounded-md"
+        width={150}
+        height={150}
+      />
+      <h2 className="text-lg font-bold mt-2">Sergio Muñoz</h2>
+      <span className="bg-gray-700 text-xs px-2 py-1 rounded">Admin</span>
+    </div>
+  </div>
 
-        </div>
-        <h1 className="text-white font-bold text-2xl text-center">
-          Sergio Muñoz
-        </h1>
-        <span className="bg-neutral-700 p-2 rounded-lg">
-          <h2>Admin</h2>
-        </span>
-      </div>
-      <div className="flex flex-col items-center gap-5 h-1/2">
-        <ProfileUser/>
-      </div>
-    </aside>
+  {/* Tabla o funcionalidades */}
+  <div className="w-2/3">
+    <h1 className="text-2xl font-bold mb-2">Gestión de Usuarios</h1>
+    <p className="mb-4 text-gray-600">Aquí podrás ver y gestionar todos los usuarios registrados en la plataforma.</p>
+    <div className="bg-white p-3 rounded shadow">
+     <button className="text-black p-2 font-semibold hover:text-blue-400">eliminar</button>
+
+    </div>
+  </div>
+</div>
+
   );
 }
